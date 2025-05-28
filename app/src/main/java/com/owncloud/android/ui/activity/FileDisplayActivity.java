@@ -1781,7 +1781,7 @@ public class FileDisplayActivity extends FileActivity
 
         fileIDForImmediatePreview = -1;
         if (PreviewImageFragment.canBePreviewed(currentFile)) {
-            startImagePreview(currentFile, !currentFile.isDown());
+            startImagePreview(currentFile, currentFile.isDown());
         } else {
             previewFile(currentFile, null);
         }
@@ -1796,9 +1796,9 @@ public class FileDisplayActivity extends FileActivity
                 default -> VirtualFolderType.NONE;
             };
 
-            startImagePreview(file, type, !file.isDown());
+            startImagePreview(file, type, file.isDown());
         } else {
-            startImagePreview(file, !file.isDown());
+            startImagePreview(file, file.isDown());
         }
     }
 
